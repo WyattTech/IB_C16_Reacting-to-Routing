@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import React from 'react';
 
 //Pages and Components Section
 import Navbar from "./components/Navbar";
@@ -15,16 +16,18 @@ const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
+      <section className="container">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/films" element={<Film />} />
-        <Route path="/films/:detailsId" element={<FilmsDetails  />} />
+        <Route path="/films/:filmsid" element={<FilmsDetails  />} />
         <Route path="/people" element={<People />} />
-        <Route path="/people/:detailsId" element={<PeopleDetails />}  />
+        <Route path="/people/:personid" element={<PeopleDetails />}  />
         <Route path="/vehicle" element={<Vehicle />} />
-        <Route path="/vehicle/:detailsId" element={<VehicleDetails />} />
+        <Route path="/vehicle/:vehicleid" element={<VehicleDetails />} />
         <Route path="*" element={<h2> 404 Page Not Found </h2>} />
       </Routes>
+      </section>
     </BrowserRouter>
   );
 };
